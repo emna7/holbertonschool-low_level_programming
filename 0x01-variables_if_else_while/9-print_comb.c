@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * print_single digit numbers
- * return 0 (success)
+ * Return: Always 0 (Success)
 */
 int main(void)
 {
