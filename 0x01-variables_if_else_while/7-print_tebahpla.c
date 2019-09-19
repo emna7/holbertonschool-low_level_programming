@@ -3,8 +3,8 @@
 int main(void)
 {
 char c;
-for (c= 'z'; c >= 'a' ; c--)
+for (c = 'z'; c >= 'a' ; c--)
 putchar(c);
-putchar(10);
+putchar('\n');
 return(0);
 }
