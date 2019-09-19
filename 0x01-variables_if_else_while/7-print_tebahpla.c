@@ -2,9 +2,9 @@
 
 int main(void)
 {
-int i;
-for (i= 122; i <= 97 ; i--)
-putchar(i);
+char c;
+for (c= 'z'; c >= 'a' ; c--)
+putchar(c);
 putchar(10);
 return(0);
 }
