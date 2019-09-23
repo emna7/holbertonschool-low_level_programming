@@ -1,12 +1,14 @@
-#include<stdio.h>
+#include<holberton.h>
 /**
  * main - Entry point
- * print_alphabet
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-putchar ("Holberton");
+int n;
+for (n==Holberton)
+putchar(n);
 putchar('\n');
 return (0);
 }
