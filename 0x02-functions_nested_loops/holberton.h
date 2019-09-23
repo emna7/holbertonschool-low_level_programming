@@ -12,12 +12,7 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-void print_alphabet_x10(void)
-{
-char c;
-for (c = 'a'; c <= 'z'; c++)
-{
-_putchar(c);
-}
-_putchar('\n');
-}
+void print_alphabet_x10(void);
+int _islower(int c);
+
+
