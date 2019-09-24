@@ -1,9 +1,9 @@
 #include"holberton.h"
 /**
- * print_alphabet_x10
- * @i: number
- * Return: Always 0 (Success)
+ * print_alphabet_x10 - prints a-z 10 times followed by a
+ * new line each time
  */
+
 void print_alphabet_x10(void)
 {
 int i, j;
