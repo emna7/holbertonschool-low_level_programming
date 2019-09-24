@@ -1,10 +1,10 @@
-#include"holberton.h"
+#include "holberton.h"
 /**
- * main - Entry point
- * _Putchar
+ * print_alphabet - entry point
+ * print alphabet
  * Return: Always 0 (Success)
  */
-int main(void)
+void print_alphabet(void)
 {
 char c;
 for (c = 'a'; c <= 'z'; c++)
