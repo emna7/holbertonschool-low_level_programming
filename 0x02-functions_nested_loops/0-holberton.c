@@ -1,16 +1,16 @@
-#include"holberton.h"
+#include "holberton.h"
 /**
- * main - Entry point
- * _Putchar
- * Return: Always 0 (Success)
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-char c[] = "Holberton";
 int i;
-for (i = 0; i <= 8 ; i++)
+char hb[] = "Holberton";
+for (i = 0; i < 9; i++)
 {
-_putchar(c[i]);
+_putchar(hb[i]);
 }
 _putchar('\n');
 return (0);
