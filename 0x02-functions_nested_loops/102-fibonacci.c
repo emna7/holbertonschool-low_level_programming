@@ -1,16 +1,22 @@
-#include <stdio.h>
+*#include <stdio.h>
+/**
+ * main - prints the first 50 fibonacci numbers.
+ *
+ * Return: 0 always.
+*/
 int main(void)
 {
-int i, n, t1 = 0, t2 = 1, nextTerm;
-printf("Enter the number of terms: ");
-scanf("%d", &n);
-printf("Fibonacci Series: ");
-for (i = 1; i <= n; ++i)
+unsigned long int x, y, z, t;
+x = 0;
+y = 1;
+for (x = 0; x < 50; x++)
 {
-printf("%d, ", t1);
-nextTerm = t1 + t2;
-t1 = t2;
-t2 = nextTerm;
+t = z + y;
+z = y + x;
+printf("%lu", t);
+if (x != 49)
+printf(", ");
 }
+printf("\n");
 return (0);
 }
