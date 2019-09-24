@@ -7,12 +7,13 @@
 int main(void)
 {
 unsigned long int x, y, z, t;
-x = 0;
+z = 0;
 y = 1;
 for (x = 0; x < 50; x++)
 {
 t = z + y;
-z = y + x;
+z = y;
+y = t;
 printf("%lu", t);
 if (x != 49)
 printf(", ");
