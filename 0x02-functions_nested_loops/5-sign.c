@@ -1,22 +1,28 @@
-#include"holberton.h"
-/**
- * _sign - checks for a number
- * @i: variable to check
- * Return: 1 if number is positive, 0 if number = 0, -1 if number is negative
-*/
+#include "holberton.h"
 
-int _sign(int i)
+/**
+ * print_sign - prints the sign of a number
+ *
+ * @n: variable to check
+ *
+ * Return: 1 for positive, 0 for 0, -1 for negative
+ */
+
+int print_sign(int n)
 {
-if (i > 0)
-{
-return (1);
-}
-if (i == 0)
-{
-return (0);
-}
-if (i < 0)
-{
-return (-1);
-}
+	if (n > 0)
+	{
+		_putchar('+');
+		return (1);
+	}
+	else if (n < 0)
+	{
+		_putchar('-');
+		return (-1);
+	}
+	else
+	{
+		_putchar('0');
+		return (0);
+	}
 }
