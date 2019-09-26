@@ -6,13 +6,31 @@
 */
 void more_numbers(void)
 {
-int i = 0;
-while (i < 10)
-_putchar(i + '0');
-while (i >= 10 && i <= 14)
+int c = 1;
+int n = 0;
+int x = 0;
+int y = 0;
+
+while (c <= 10)
+}
+n = 0;
+while (n <= 14)
 {
-_putchar((i / 10) + '0');
-_putchar((i % 10) + '0');
-_pucthar('\n');
+if (n < 10)
+{
+y = n;
+}
+else
+{
+x = (n / 10);
+y = (n % 10);
+
+_putchar(x + '0');
+}
+_putchar(y + '0');
+n++;
+}
+_putchar('\n');
+c++;
 }
 }
