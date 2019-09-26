@@ -9,10 +9,14 @@ int main(void)
 long n; i;
 i = 2;
 n = 612852475143
-for (i = 2; i <= a; i++)
+for (i = 2; i <= n; i++)
+{
+if (n % i == 0)
 {
 while (n % i == 0)
-printf("maxPrime = i");
+n = n / i;
 }
+}
+printf("%ld\n", i - 1);
 return (0);
 }
