@@ -10,10 +10,10 @@ char c;
 if (c >= 'A' && c <= 'Z')
 {
 _putchar("c is upper")
-return(1);
+return (1);
 }
 else
 {
-return(0);
+return (0);
 }
 }
