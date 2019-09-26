@@ -6,17 +6,21 @@
 */
 int main(void)
 {
-long n; i;
-i = 2;
-n = 612852475143
-for (i = 2; i <= n; i++)
+long d, largest_num;
+long number;
+
+number = 612852475143;
+for (d = 2; d < sqrt(number); d++)
 {
-if (n % i == 0)
+if ((number % d) == 0)
 {
-while (n % i == 0)
-n = n / i;
+largest_num = d;
+number = number / d;
+d = 1;
 }
 }
-printf("%ld\n", i - 1);
+largest_num = number;
+printf("%ld\n", largest_num);
 return (0);
+
 }
