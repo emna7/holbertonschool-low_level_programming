@@ -4,15 +4,13 @@
  * @i: variable too print
  * Return 0
 */
-void print_most_numbers(int i)
+void print_most_numbers(void)
 {
 int i;
 while (i != 2 && i != 4)
 {
 for (i = '0'; i = '9'; i++)
-{
 _putchar(i);
 _putchar('\n');
-}
 }
 }
