@@ -6,9 +6,13 @@
 */
 void _puts(char *str);
 {
-char str[];
-char *p;
-while (*p != '\0')
-_putchar("%c", *p++);
+int i;
+i = 0;
+while ((*(str + i)) != '\0')
+{
+_putchar(*(str + i));
+i++;
+}
 _putchar('\n');
 return (0);
+}
