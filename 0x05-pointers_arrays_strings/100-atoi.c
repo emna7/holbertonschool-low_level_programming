@@ -20,7 +20,7 @@ signe = -1;
 }
 else if (*(s + i) == 0..9)
 {
-val = (j * val) + val;
+val = (j * val) + *(s + i);
 j = j * 10;
 }
 }
