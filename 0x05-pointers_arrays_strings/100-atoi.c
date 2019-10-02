@@ -12,16 +12,16 @@ while(*(s + i) != '\0')
 {
 if (*(s + i) == '+')
 {
-signe = 1;
+signe = signe * 1;
 }
 else if (*(s + i) == '-')
 {
-signe = -1;
+signe = signe * -1;
 }
-else if (*(s + i) == 0..9)
+else if ((*(s + i) >= '0' && *(s + i) <= '9'))
 {
 val = (j * val) + *(s + i);
-j = j * 10;
+j = j * 10 + (*(s + i) - '0');
 }
 }
 val = val * signe;
