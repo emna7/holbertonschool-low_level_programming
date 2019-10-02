@@ -8,6 +8,7 @@ int _atoi(char *s)
 {
 int c, i, j, m, signe, val;
 i = 0;
+val = 0;
 while (s[i] != '\0')
 {
 i++;
@@ -26,7 +27,7 @@ for (m = c; m < i; m++)
 if (s[m] < '0' && s[m] > '9')
 break;
 else if (s[m] >= '0' && s[m] <= '9')
-val = val * 10 + (s[m] - '9');
+val = val * 10 + (s[m] - '0');
 }
 val *= signe;
 return (val);
