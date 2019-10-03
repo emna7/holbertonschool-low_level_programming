@@ -6,28 +6,23 @@
 */
 char *cap_string(char *c)
 {
-int i = 0, j = 0;
-const int ASCII_DIF = 32;
-char seps[] = {
-' ', '\t', '\n', ',', ';', '.',
-'!', '?', '"', '(', ')', '{', '}'
-};
-
-if (c[0] >= 'a' && c[0] <= 'z')
-c[0] = c[0] - ASCII_DIF;
-
+int i = 0;
+int j = 0;
+const int DIF = 32;
+char sep[] = {' ', '\t', '\n', ',', ';', '.','!', '?', '"', '(', ')', '{', '}'};
 while (c[i] != '\0')
 {
-for (j = 0; seps[j] != '\0'; j++)
+for (j = 0; sep[j] != '\0'; j++)
 {
-if (c[i - 1] == seps[j])
+if (c[i - 1] == sep[j])
 {
 if (c[i] >= 'a' && c[i] <= 'z')
-c[i] = c[i] - ASCII_DIF;
+{
+c[i] = c[i] - DIF;
+}
 }
 }
 i++;
 }
-
 return (c);
 }
