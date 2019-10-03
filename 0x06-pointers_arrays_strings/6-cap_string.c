@@ -1,33 +1,33 @@
 #include"holberton.h"
 /**
  * cap_string - function that capitalizes a char
- * @s: pointer
- * Return: char
+ * @c: pointer
+ * Return: pointer to a string c
 */
-char *cap_string(char *s)
+char *cap_string(char *c)
 {
-int i, j;
-char spec[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"',
-'(', ')', '{', '}'};
-for (i = 0; s[i] != '\0'; i++)
+int i = 0, j = 0;
+const int ASCII_DIF = 32;
+char seps[] = {
+' ', '\t', '\n', ',', ';', '.',
+'!', '?', '"', '(', ')', '{', '}'
+};
+
+if (c[0] >= 'a' && c[0] <= 'z')
+c[0] = c[0] - ASCII_DIF;
+
+while (c[i] != '\0')
 {
-for (j = 0; spec[j] != '\0'; j++)
+for (j = 0; seps[j] != '\0'; j++)
 {
-if (i == 0)
+if (c[i - 1] == seps[j])
 {
-if (s[i] >= 'i' && s[i] <= 'z')
-{
-s[i] = s[i] - 32;
+if (c[i] >= 'a' && c[i] <= 'z')
+c[i] = c[i] - ASCII_DIF;
 }
 }
-if (s[i] == spec[j])
-{
-if (s[i + 1] >= 'i' && s[i + 1] <= 'z')
-{
-s[i + 1] = s[i + 1] - 32;
+i++;
 }
-}
-}
-}
-return (s);
+
+return (c);
 }
