@@ -3,22 +3,17 @@
  * _strcmp - function that compares two strings
  * @s1: pointer
  * @s2: pointer
- * Return: 0
+ * Return: diff
 */
 int _strcmp(char *s1, char *s2)
 {
-int i, x;
-i = 0;
-if (s1 == s2){
-return (0);
-};
-while (s1[i] != '\0' || s2[i] != '\0')
+int i;
+for (i = 0; s2[i] != '\0'; i++)
 {
 if (s1[i] != s2[i])
 {
-x += *s1[i] - *s2[i];
+return (s1[i] - s2[i]);
 }
-i++;
 }
-return (x);
+return (0);
 }
