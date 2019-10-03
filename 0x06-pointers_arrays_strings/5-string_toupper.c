@@ -4,14 +4,15 @@
  * @s: pointer to array
  * Return: character
 */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
 int i;
 for (i = 0; s[i] != '\0'; i++)
 {
-for (s[i] = 97; s[i] <= 122 || s[i] = 65; s[i] <= 90)
-(s[i] = 65 && s[i] <= 90);
-i++;
+if (s[i] == 97 && s[i] <= 122)
+{
+s[i] = 65 && s[i] <= 90;
+}
 }
 return (s);
 }
