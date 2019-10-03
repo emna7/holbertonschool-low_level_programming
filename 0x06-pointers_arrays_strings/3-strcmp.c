@@ -15,10 +15,6 @@ if (s1[i] != s2[i])
 {
 x = s1[i] - s2[i];
 }
-else if (*s1 == *s2)
-{
-x = 0;
-}
 i++;
 }
 return (x);
