@@ -7,14 +7,14 @@
 */
 int _strcmp(char *s1, char *s2)
 {
-int i, j, x;
+int i, x;
 i = 0;
-j = 0;
-while (s1[i] != '\0')
-i++;
-while (s2[j] != '\0')
-j++;
-for (i < j || i = j || i > j)
-_putchar(x = i - j + '0');
+for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+{
+if (s1[i] != s2[i])
+x = s1[i] - s2[i];
+else
+x = 0;
+}
 return (x);
 }
