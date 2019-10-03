@@ -6,9 +6,14 @@
 */
 char *string_toupper(char *s)
 {
-if (*s == 97 && *s <= 122)
+int i = 0;
+while (s[i] != '\0')
 {
-*s = 90 - (122 - *s);
+if (s[i] >= 97 && s[i] <= 122)
+{
+s[i] = s[i] - 32;
 }
-return (*s);
+++i;
+}
+return (s);
 }
