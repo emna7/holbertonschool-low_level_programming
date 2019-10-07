@@ -22,5 +22,6 @@ while (i < ((size * size) - 1))
 sum1 += *(a + i);
 i += size - 1;
 }
-printf("%d, %d\n", sum, sum1);
+printf("%d, ", sum);
+printf("%d\n", sum1);
 }
