@@ -7,12 +7,19 @@
 */
 void print_diagsums(int *a, int size)
 {
-int i = 0, j = 0, sum = 0;
+int i = 0, j = 0, sum = 0, sum2 = 0;
 while (i = j)
 {
-sum = a[i][j] + a[i + 1][j + 1]
+sum += a[i][j];
 i++;
-j++
+j++;
 }
-printf("%d\n", sum);
+j = 0;
+do
+{
+sum2 += a[i][j];
+i--;
+j++;
+} while ( i != 0);
+printf("%d, %d\n", sum, sum2);
 }
