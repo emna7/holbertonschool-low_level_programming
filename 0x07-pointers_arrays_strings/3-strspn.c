@@ -15,14 +15,14 @@ while (*(s + i) !=  '\0')
 while (*(accept + j) != '\0')
 {
 if (s[0] != accept[0])
-return (0);
+return (n);
 else if (s[i] == accept[j])
 {
-n = n + 1;
-i++;
+n++;
+}
 j++;
 }
-}
+i++
 }
 return (n);
 }
