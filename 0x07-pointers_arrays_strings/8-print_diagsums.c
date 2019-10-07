@@ -9,25 +9,18 @@
 void print_diagsums(int *a, int size)
 {
 int i;
-int j;
-int x;
+int sum = 0, sum1 = 0;
 i = 0;
-j = 0;
-x = size * size;
-while (i < x)
+while (i < (size * size))
 {
-if (i % (size + 1) == 0)
-j += a[i];
-i++;
+sum += *(a + i);
+i += size + 1;
 }
-printf("%d, ", j);
-j = 0;
 i = 0;
-while (i < x)
+while (i < ((size * size) - 1))
 {
-if (i % (size - 1) == 0 && i != (j - 1) && i != 0)
-j += a[i];
-i++;
+sum1 += *(a + i);
+i += size - 1;
 }
-printf("%d\n", j);
+printf("%d, %d\n", sum, sum1);
 }
