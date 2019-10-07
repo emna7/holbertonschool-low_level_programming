@@ -1,4 +1,5 @@
 #include"holberton.h"
+#include <stdio.h>
 /**
  * print_diagsums - prints sums of both diagonals of square matrix
  * @size: size of square
@@ -7,19 +8,26 @@
 */
 void print_diagsums(int *a, int size)
 {
-int i = 0, j = 0, sum = 0, sum2 = 0;
-while (i = j)
-{
-sum += a[i][j];
-i++;
-j++;
-}
+int i;
+int j;
+int x;
+i = 0;
 j = 0;
-do
+x = size * size;
+while (i < x)
 {
-sum2 += a[i][j];
-i--;
-j++;
-} while ( i != 0);
-printf("%d, %d\n", sum, sum2);
+if (i % (size + 1) == 0)
+j += a[i];
+i++;
+}
+printf("%d, ", j);
+j = 0;
+i = 0;
+while (i < x)
+{
+if (i % (size - 1) == 0 && i != (j - 1) && i != 0)
+j += a[i];
+i++;
+}
+printf("%d\n", j);
 }
