@@ -13,6 +13,7 @@ while (*(s + i) != '\0')
 if (s[i] == c)
 return (s);
 i++;
+}
 if (*(s + i) != c)
 return (0);
 }
