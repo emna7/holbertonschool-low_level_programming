@@ -1,34 +1,25 @@
-#include"holberton.h"
+#include "holberton.h"
 /**
- * _atoi - function that converts a str to int
- * @s: pointer
- * Return: val
-*/
+ * _atoi - converts a string to an integer
+ * @s: string to convert
+ *
+ * Return: value of integer
+ */
+
 int _atoi(char *s)
 {
-int c, i, j, m, signe, val;
-i = 0;
-val = 0;
-while (s[i] != '\0')
+int i, n, signe = 1;
+i = n = 0;
+while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
 {
+if (*(s + i) == '-')
+signe *= -1;
 i++;
 }
-for (c = 0; c < i; c++)
-if (s[c] >= '0' && s[c] <= '9')
-break;
-}
-for (j = 0; j < c; j++)
+while ((*(s + i) >= '0') && (*(s + i) <= '9'))
 {
-if (s[j] == '-')
-signe = -1;
+n = n * 10 + signe * (*(s + i) - '0');
+i++;
 }
-for (m = c; m < i; m++)
-{
-if (s[m] < '0' && s[m] > '9')
-break;
-else if (s[m] >= '0' && s[m] <= '9')
-val = val * 10 + (s[m] - '0');
-}
-val *= signe;
-return (val);
+return (n);
 }
