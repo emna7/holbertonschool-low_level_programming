@@ -5,18 +5,8 @@
  *@argv: argument vector
  *Return: 0
  */
-int main (int argc, char *argv[])
+int main (int argc, char *argv[] __attribute__((unused)))
 {
-int count;
-argv[0] = "0";
-if (argc > 1)
-{
-for (count = 1; count < argc; count++)
-printf("%d\n", count);
-}
-else
-{
-printf("%s\n", argv[0]);
-}
-return 0;
+printf("%d\n", argc - 1);
+return (0);
 }
