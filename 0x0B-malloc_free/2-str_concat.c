@@ -5,6 +5,7 @@
  * str_concat - function that concatenates 2 strings
  * @s1: pointer
  * @s2: pointer
+ * Return: s
 */
 char *str_concat(char *s1, char *s2)
 {
@@ -31,7 +32,7 @@ if (s == NULL)
 return (NULL);
 for (k = 0 ; k < i; k++)
 s[k] = s1[k];
-i = i +j;
+i = i + j;
 j = 0;
 for (; k < i; k++)
 {
