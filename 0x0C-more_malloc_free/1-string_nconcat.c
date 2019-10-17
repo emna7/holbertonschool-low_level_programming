@@ -15,23 +15,17 @@ int k = 0;
 char *p;
 if (s1 != NULL)
 while (s1[i] != '\0')
-{
 i++;
-}
 if (s2 != NULL)
 while (s2[j] != '\0')
-{
 j++;
-}
 if (n > j)
 {
 n = j;
-p = malloc(sizeof(char) * (i + j) + 1);
+p = malloc(sizeof(char) * ((i + j) +1));
 }
 else
-{
-p = malloc(sizeof(char) * (i + n) + 1);
-}
+p = malloc(sizeof(char) * ((i + n) +1));
 if (p == NULL)
 return (NULL);
 i = 0;
