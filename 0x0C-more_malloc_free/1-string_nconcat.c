@@ -13,10 +13,12 @@ unsigned int i = 0;
 unsigned int j = 0;
 int k = 0;
 char *p;
+if (s1 != NULL)
 while (s1[i] != '\0')
 {
 i++;
 }
+if (s2 != NULL)
 while (s2[j] != '\0')
 {
 j++;
@@ -46,5 +48,6 @@ p[k] = s2[j];
 k++;
 j++;
 }
+p[k] = '\0';
 return (p);
 }
