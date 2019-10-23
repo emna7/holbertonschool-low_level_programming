@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "3-calc.h"
 /**
  * get_op_func - returns a pointer to the function that
  *corresponds to the operator given as a parameter
@@ -15,11 +18,11 @@ op_t ops[] = {
 {NULL, NULL}
 };
 int i = 0;
-while (i < 6)
+while (ops[i].op)
 {
-if (s == ops[i].op)
-break;
+if (*(ops[i].op) == *s)
+return (ops[i].f);
 i++;
 }
-return (ops[i].op);
+return (NULL);
 }
