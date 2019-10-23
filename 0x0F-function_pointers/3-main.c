@@ -17,7 +17,7 @@ int b;
 
 if (argc != 4)
 {
-printf("error\n");
+printf("Error\n");
 exit(98);
 }
 op = get_op_func(argv[2]);
