@@ -17,8 +17,10 @@ p = head;
 if (p == NULL)
 return (NULL);
 while (p != NULL)
-if (i != index)
-return (NULL);
-i++;
+{
+while (i == index)
 return (p);
+i++;
+}
+return (NULL);
 }
