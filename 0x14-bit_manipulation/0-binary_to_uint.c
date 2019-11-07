@@ -7,49 +7,28 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-int i = 0, l = 0, sum = 0;
-int po;
+unsigned int sum, x , c;
+int i, len;
 if (b == NULL)
 return (0);
-while (b[i] != '\0')
+len = 0;
+for (i = 0 ; b[i] != '\0' ; i++)
 {
-l++;
-i++;
-}
-i = 0;
-while (b[i] != '\0')
-{
-if (b[i] == '1')
-{
-po = power(2, l);
-sum+= po;
-i++;
-l--;
-return (sum);
-}
-else if (b[i] == '0')
-{
-i++;
-l--;
-}
-else
+if (b[i] != '0' && b[i] != '1')
 return (0);
+len++;
+}
+len--;
+sum = 0;
+c = 1;
+for (i = len ; i >= 0 ; i--)
+{
+if (b[i] == '0')
+x = 0;
+if (b[i] == '1')
+x = 1;
+sum = sum + x * c;
+c = c * 2;
 }
 return (sum);
-}
-/**
-*
-*
-*
-*/
-int power(int base, int pow)
-{
-int exp, result;
-if(pow == 0)
-return 1;
-for (exp = pow; exp > 0; exp--)
-{
-result = result * base;
-}
-return (result);
 }
