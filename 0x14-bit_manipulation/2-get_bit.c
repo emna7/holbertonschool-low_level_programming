@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * get-bit - function that returns the value of a bit
+ * get_bit - function that returns the value of a bit
  * @n: unsigned long int
  * @index: the given index
  * Return: the value of the bit
