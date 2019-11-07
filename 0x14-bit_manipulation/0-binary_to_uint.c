@@ -7,7 +7,7 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-unsigned int sum, x , c;
+unsigned int sum, x, c;
 int i, len;
 if (b == NULL)
 return (0);
@@ -27,7 +27,7 @@ if (b[i] == '0')
 x = 0;
 if (b[i] == '1')
 x = 1;
-sum = sum + x * c;
+sum = sum + x *c;
 c = c * 2;
 }
 return (sum);
