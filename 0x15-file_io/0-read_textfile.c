@@ -38,4 +38,3 @@ close(fd);
 free(buf);
 return (wcount);
 }
-}
