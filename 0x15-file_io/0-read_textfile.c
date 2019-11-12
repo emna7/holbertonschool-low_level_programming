@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
- * read_textfile - function that prints a number of letters from a text file to STDOUT
+ * read_textfile - function that prints a number of letters
+ *from a text file to STDOUT
  * @filename: name of file
  * @letters: number of letters
  * Return: number of letters read and printed, or 0 on failure
