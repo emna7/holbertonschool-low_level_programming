@@ -15,7 +15,7 @@ if (argc != 3)
 dprintf(STDERR_FILENO, "Usage cp file_from file_to\n");
 exit(97);
 }
-uf = malloc(1024 * sizeof(char));
+buf = malloc(1024 * sizeof(char));
 if (buf == NULL)
 return (-1);
 x1 = open(argv[1], O_RDONLY);
