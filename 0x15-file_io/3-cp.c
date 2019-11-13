@@ -25,11 +25,9 @@ free(buf);
 dprintf(STDERR_FILENO, "Error: Can\'t read from file %s\n", argv[1]);
 exit(98);
 }
-x2 = open(argv[2], O_RDWR | O_TRUNC);
+x2 = open(argv[2], O_RDWR | O_TRUNC | O_CREAT, 0664);
 if (x2 == -1)
 {
-close(x1);
-free(buf);
 dprintf(STDERR_FILENO, "Error: Can\'t write to %s\n", argv[2]);
 exit(99);
 }
