@@ -1,47 +1,39 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * string_nconcat - function that concatenates two strings
- * @s1: pointer
- * @s2: pointer
- * @n: unsigned int
- * Return: p
-*/
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * @n: number of bytes of s2
+ * Return: char pointer
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-unsigned int i = 0;
-unsigned int j = 0;
-int k = 0;
-char *p;
-if (s1 != NULL)
-while (s1[i] != '\0')
-i++;
-if (s2 != NULL)
-while (s2[j] != '\0')
-j++;
-if (n > j)
-{
-n = j;
-p = malloc(sizeof(char) * ((i + j) +1));
-}
-else
-p = malloc(sizeof(char) * ((i + n) +1));
-if (p == NULL)
-return (NULL);
+unsigned int i, j, k;
+char *str;
+if (s1 == NULL)
 i = 0;
-while (s1[i] != '\0')
+else
 {
-p[k] = s1[i];
-i++;
-k++;
+for (i = 0; s1[i]; i++)
+;
 }
+if (s2 == NULL)
 j = 0;
-while (n > j)
+else
 {
-p[k] = s2[j];
-k++;
-j++;
+for (j = 0; s2[j]; j++)
+;
 }
-p[k] = '\0';
-return (p);
+if (j > n)
+j = n;
+str = malloc(sizeof(char) * (i + j + 1));
+if (str == NULL)
+return (NULL);
+for (k = 0; k < i; k++)
+str[k] = s1[k];
+for (k = 0; k < j; k++)
+str[k + i] = s2[k];
+str[i + j] = '\0';
+return (str);
 }
