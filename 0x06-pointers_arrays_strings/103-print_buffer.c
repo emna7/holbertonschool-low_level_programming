@@ -1,39 +1,44 @@
-#include "holberton.h"
 #include <stdio.h>
+
 /**
- * print_buffer - Prints a buffer
- * @b: The buffer to be printed.
- * @size: The number of octs to be printed from the buffer.
+ * print_buffer - print hex view of buffer
+ *  with 10(!) bytes per row
+ *
+ * @b: buffer
+ * @size: size of @b
  */
 void print_buffer(char *b, int size)
 {
-int oct, i;
-for (oct = 0; oct < size; oct += 10)
-{
-printf("%08x: ", oct);
-for (i = 0; i < 10; i++)
-{
-if ((i + oct) >= size)
-printf(" ");
-else
-printf("%02x", *(b + i + oct));
-if ((i % 2) != 0 && i != 0)
-printf(" ");
-}
-for (i = 0; i < 10; i++)
-{
-if ((i + oct) >= size)
-break;
-else if (*(b + i + oct) >= 31 &&
-*(b + i + oct) <= 126)
-printf("%c", *(b + i + oct));
-else
-printf(".");
-}
-if (oct >= size)
-continue;
-printf("\n");
-}
+int i;
+char j, c;
+
 if (size <= 0)
-printf("\n");
+{
+putchar('\n');
+return;
+}
+for (i = 0; i < size; i += 10)
+{
+printf("%08x: ", i);
+for (j = 0; j < 10; j++)
+{
+if (i + j < size)
+printf("%02x", (unsigned char)b[i + j]);
+else
+printf("  ");
+if (j & 1)
+putchar(' ');
+}
+for (j = 0; j < 10; j++)
+{
+if (i + j >= size)
+break;
+c = b[i + j];
+if (c >= ' ' && c <= '~')
+putchar(c);
+else
+putchar('.');
+}
+putchar('\n');
+}
 }
