@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * print_list - print items in a list
- * @h: the list to be printed
- * Return: number of elements
+* print_list - print items in a list
+* @h: the list to be printed
+* Return: number of elements
 */
 size_t print_list(const list_t *h)
 {
