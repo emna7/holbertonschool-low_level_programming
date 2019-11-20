@@ -6,26 +6,20 @@
 */
 char *rot13(char *s)
 {
-int i;
-int j;
-int n = 0;
-char oldalpha[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
-char newalpha[] = "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm";
-i = 0;
-j = 0;
-while (s[i] != '\0')
+int i, j;
+char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+for (i = 0; *(s + i); i++)
 {
-while (oldalpha[j] != '\0' && n == 0)
+for (j = 0; j < 52; j++)
 {
-if (s[i] == oldalpha[j])
+if (a[j] == *(s + i))
 {
-s[i] = newalpha[j];
-n = 1;
+*(s + i) = b[j];
+break;
 }
-j++;
 }
-n = 0;
-i++;
 }
 return (s);
 }
