@@ -6,14 +6,12 @@
 #include <sys/wait.h>
 /**
  * main - creating a shell
- *
  * Return: always 0.
  */
 int main(void)
 {
 char *buffer;
-size_t bufsize = 32;
-/*char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};*/
+size_t bf, bufsize = 32;
 char *tok, *argv[100];
 int i, status;
 pid_t p;
@@ -24,7 +22,7 @@ if (buffer == NULL)
 perror("Unable to allocate buffer");
 exit(1);
 }
-printf("cisfun$ ");
+printf("cisfun$");
 while (getline(&buffer, &bufsize, stdin) != -1)
 {
 i = 0;
@@ -48,13 +46,25 @@ else if (p > 0)
 {
 if ((p = wait(&status)) < 0)
 perror("wait");
-printf("father");
+//printf("father");
 }
 else
 {
 perror("fork failed");
 }
-printf("cisfun$ ");
+//printf("cisfun$");
 }
+if (strcmp(buffer, "exit\n") == 0)
+{
+free(buffer);
+exit(1);
+}
+bf = getline(&buffer, &bufsize, stdin);
+if (bf == EOF)
+{
+write(STDOUT_FILENO, "\n", 1);
+exit(0);
+}
+
 return(0);
 }
