@@ -10,6 +10,8 @@
  */
 int main(void)
 {
+while(1)
+{
 char *buffer;
 size_t bf, bufsize = 32;
 char *tok, *argv[100];
@@ -52,11 +54,12 @@ else
 {
 perror("fork failed");
 }
-//printf("cisfun$");
+printf("cisfun$");
 }
 if (strcmp(buffer, "exit\n") == 0)
 {
 free(buffer);
+free(tok);
 exit(1);
 }
 bf = getline(&buffer, &bufsize, stdin);
@@ -65,6 +68,6 @@ if (bf == EOF)
 write(STDOUT_FILENO, "\n", 1);
 exit(0);
 }
-
+}
 return(0);
 }
