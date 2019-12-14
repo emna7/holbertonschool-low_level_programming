@@ -8,36 +8,41 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-unsigned int i;
-dlistint_t *tmp, *new = malloc(sizeof(dlistint_t));
-if (new == NULL || h == NULL)
+dlistint_t *new, *temp = *h;
+if (h == NULL)
+return (NULL);
+new = malloc(sizeof(dlistint_t));
+if (new == NULL)
 return (NULL);
 new->n = n;
-if (*h == NULL)
+if (idx == 0 && *h == NULL)
 {
-new->next = NULL;
 new->prev = NULL;
+new->next = NULL;
 *h = new;
 return (new);
 }
-if (idx == 0)
-return (add_dnodeint(h, n));
-tmp = *h;
-for (i = 0; i <= idx && tmp->next != NULL; i++)
+if (idx == 0 && temp != NULL)
 {
-tmp = tmp->next;
-if (tmp == NULL)
-return (NULL);
-if (i == idx - 1)
-{
-new->next = tmp->next;
-new->prev = tmp->prev;
-tmp->prev->next = new;
-tmp->next->prev = new;
+new->next = temp, new->prev = NULL;
+temp->prev = new, *h = new;
 return (new);
 }
+while (temp != NULL && idx > 1)
+temp = temp->next, idx--;
+if (temp != NULL)
+{
+new->next = temp->next;
+new->prev = temp;
+if (temp->next == NULL)
+temp->next = new;
+else
+{
+temp->next->prev = new;
+temp->next = new;
 }
-if (tmp->next == NULL)
-return (add_dnodeint_end(h, n));
+return (new);
+}
+free(new);
 return (NULL);
 }
