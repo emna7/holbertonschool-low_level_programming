@@ -22,5 +22,5 @@ exit(i);
 WEXITSTATUS(status);
 }
 }
-return 0;
+return (0);
 }

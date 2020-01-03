@@ -1,40 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include <header.h>
 /**
  * main - creating a shell
  * Return: always 0.
  */
 int main(void)
 {
-while(1)
-{
-char *buffer;
+char *buf;
+char *stok, *argv[120];
 size_t bf, bufsize = 32;
-char *tok, *argv[100];
 int i, status;
 pid_t p;
 
-buffer = (char*)malloc(bufsize * sizeof(char));
-if (buffer == NULL)
+buf = (char*)malloc(bufsize * sizeof(char));
+if (buf == NULL)
 {
 perror("Unable to allocate buffer");
 exit(1);
 }
+while (1)
+{
 printf("cisfun$");
-while (getline(&buffer, &bufsize, stdin) != -1)
-{
 i = 0;
-tok = strtok(buffer, " \n");
-argv[i] = tok;
-while (tok != 0)
+stok = strtok(buf, " \n");
+argv[i] = stok;
+for (i = 0; stok != 0; i++)
 {
-i++;
-tok = strtok(0, " \n");
-argv[i] = tok;
+stok = strtok(0, " \n");
+argv[i] = stok;
 }
 argv[i] = NULL;
 p = fork();
@@ -56,13 +48,13 @@ perror("fork failed");
 }
 printf("cisfun$");
 }
-if (strcmp(buffer, "exit\n") == 0)
+if (strcmp(buf, "exit\n") == 0)
 {
-free(buffer);
-free(tok);
+free(buf);
+free(stok);
 exit(1);
 }
-bf = getline(&buffer, &bufsize, stdin);
+bf = getline(&buf, &bufsize, stdin);
 if (bf == EOF)
 {
 write(STDOUT_FILENO, "\n", 1);
